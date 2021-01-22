@@ -1,0 +1,14 @@
+[package]
+name = "trovo"
+version = "0.1.0"
+authors = ["AEnterprise <aenterprise2@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+futures = { version = "0.3", default-features = false }
+twilight-gateway = { version="0.3", default-features=false, features=["rustls", "simd-json", "simd-zlib"] }
+twilight-http = "0.3"
+# no need for multithreading, this bot won't be doing all that much
+tokio = { version = "1", default-features = false, features = ["rt", "macros"] }
