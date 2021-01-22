@@ -27,6 +27,10 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
             if message.channel_id.0 == 743508461651886151 && message.content == ".r" {
                 if let Err(e) = http.create_message(743508461651886151.into()).content("<@&743186303981453464> <@237624303581921281>").unwrap().await {
                     println!("Error: {}", e);
+                } else {
+                    if let Err(e) = http.delete_message(message.channel_id, message.id).await {
+                        println!("Error: {}", e);
+                    }
                 }
             }
         }
