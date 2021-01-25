@@ -8,7 +8,7 @@ edition = "2018"
 
 [dependencies]
 futures = { version = "0.3", default-features = false }
-twilight-gateway = { version="0.3", default-features=false, features=["rustls", "simd-json", "simd-zlib"] }
+twilight-gateway = { version="0.3", default-features=false, features=["rustls"] }
 twilight-http = "0.3"
 # no need for multithreading, this bot won't be doing all that much
 tokio = { version = "1", default-features = false, features = ["rt", "macros"] }
