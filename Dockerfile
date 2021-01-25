@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install cmake -y
 WORKDIR /compile
 RUN mkdir ./src
 RUN echo "fn main() {}" > ./src/main.rs
+COPY ./.cargo ./.cargo
 COPY ./Cargo.toml ./Cargo.toml
 COPY ./Cargo.lock ./Cargo.lock
 RUN cargo build --release
