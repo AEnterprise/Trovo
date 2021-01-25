@@ -8,7 +8,7 @@ COPY ./.cargo ./.cargo
 COPY ./Cargo.toml ./Cargo.toml
 COPY ./Cargo.lock ./Cargo.lock
 RUN cargo build --release
-RUN rm -f ./target/release/*
+RUN rm -f ./target/release/deps/trovo*
 COPY ./src ./src
 RUN cargo build --release
 
