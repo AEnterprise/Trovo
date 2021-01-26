@@ -1,6 +1,6 @@
 FROM rust:latest as builder
 USER root
-RUN apt-get update && apt-get install --no-cache pkgconfig openssl-dev ca-certificates linux-headers cmake -y && update-ca-certificates
+RUN apt-get update && apt-get install libssl-dev ca-certificates cmake -y && update-ca-certificates
 WORKDIR /compile
 RUN mkdir ./src
 RUN echo "fn main() {}" > ./src/main.rs
